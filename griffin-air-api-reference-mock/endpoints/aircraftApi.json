@@ -1,0 +1,187 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Aircraft API",
+    "version": "1.0",
+    "description": "This API, as part of the GriffinAir (Fictional Airline) Axway Presales Demo, retrieves the complete details of one particular aircraft or list of aircrafts. ",
+    "contact": {
+      "name": "Axway",
+      "email": "mpentzek@axway.com"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "host": "example.com",
+  "paths": {
+    "/aircraft": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Aircraft"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "id": 466,
+                  "model": "Airbus 320",
+                  "icao_code": "A320",
+                  "iata_code": "320",
+                  "manufacturer": "Airbus",
+                  "wingspan": "37m",
+                  "description": "The Airbus A320 is the most broadly represented...",
+                  "size": "small"
+                },
+                {
+                  "id": 426,
+                  "model": "Airbus 340",
+                  "icao_code": "A340",
+                  "iata_code": "340",
+                  "manufacturer": "Airbus",
+                  "wingspan": "56m",
+                  "description": "The Airbus A340 is the...",
+                  "size": "large"
+                }
+              ]
+            }
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "summary": "GET all aircraft",
+        "operationId": "get_aircraft",
+        "produces": [
+          "application/json"
+        ],
+        "description": "This operation returns a list of aircrafts",
+        "tags": [
+          "aircraft"
+        ],
+        "x-flow": "aircraftApi-get_aircraft"
+      }
+    },
+    "/aircraft/{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Aircraft"
+            }
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "summary": "GET a single aircraft",
+        "operationId": "get_aircraft_by_id",
+        "tags": [
+          "aircraft"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "description": "This operation retrieves a specific aircraft identified by id",
+        "x-flow": "aircraftApi-get_aircraft_by_id"
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "id of the aircraft"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "Aircraft": {
+      "type": "object",
+      "description": "This model represents an aircraft with its common attributes",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "example": 466,
+          "description": "internal ID of the datarow"
+        },
+        "model": {
+          "type": "string",
+          "example": "Airbus 320",
+          "description": "Model name of the aircraft"
+        },
+        "icao_code": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 4,
+          "example": "A320",
+          "description": "The ICAO code of the aircraft"
+        },
+        "iata_code": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 3,
+          "example": "320",
+          "description": "The IATA code of the aircraft"
+        },
+        "manufacturer": {
+          "type": "string",
+          "example": "Airbus",
+          "description": "Name of the aircraft manufacturer"
+        },
+        "wingspan": {
+          "type": "string",
+          "example": "37m",
+          "description": "Wingspan of the aircraft",
+          "default": "n.a."
+        },
+        "description": {
+          "type": "string",
+          "example": "The Airbus A320 is the most broadly represented...",
+          "description": "Description of the aircraft"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "small",
+            "medium",
+            "large"
+          ],
+          "example": "small",
+          "description": "Size clsssification of the aircraft"
+        }
+      }
+    }
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "aircraft"
+    }
+  ],
+  "basePath": "/v1"
+}

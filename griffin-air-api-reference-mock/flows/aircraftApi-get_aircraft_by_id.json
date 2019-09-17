@@ -1,0 +1,64 @@
+{
+	"schemaVersion": "4",
+	"info": {
+		"name": "get_aircraft_by_id"
+	},
+	"parameter": {
+		"properties": {
+			"params": {
+				"type": "object",
+				"description": "The parameters from the endpoint."
+			},
+			"request": {
+				"type": "object",
+				"description": "The HTTP request."
+			},
+			"config": {
+				"type": "object",
+				"description": "The service's configuration"
+			},
+			"env": {
+				"type": "object",
+				"description": "The host OS environment"
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"params",
+			"request",
+			"config",
+			"env"
+		]
+	},
+	"start": "http.setresponse.1",
+	"nodes": {
+		"http.setresponse.1": {
+			"type": "nodehandler://axway-flow/http",
+			"method": "setresponse",
+			"name": "Set HTTP Response",
+			"parameters": [
+				{
+					"name": "status",
+					"value": "200",
+					"type": "number",
+					"metaName": "status",
+					"metaDescription": "The HTTP status code"
+				},
+				{
+					"name": "body",
+					"value": "{\n    \"id\": 466,\n    \"model\": \"Airbus 320\",\n    \"icao_code\": \"A320\",\n    \"iata_code\": \"320\",\n    \"manufacturer\": \"Airbus\",\n    \"wingspan\": \"37m\",\n    \"description\": \"The Airbus A320 is the most broadly represented...\",\n    \"size\": \"small\"\n}",
+					"type": "object",
+					"metaName": "body",
+					"metaDescription": "The response payload"
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.response",
+					"metaName": "Next"
+				}
+			},
+			"metaMethod": "Set HTTP Response"
+		}
+	}
+}
