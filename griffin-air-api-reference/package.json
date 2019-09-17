@@ -1,0 +1,49 @@
+{
+	"name": "griffin-air-api-reference",
+	"description": "An API Builder service",
+	"main": "app.js",
+	"version": "1.0.0",
+	"license": "",
+	"keywords": [
+		"api-builder",
+		"micro-service",
+		"middleware",
+		"orm",
+		"service"
+	],
+	"engines": {
+		"node": ">= 8.9"
+	},
+	"repository": {},
+	"private": true,
+	"dependencies": {
+		"@axway/api-builder-plugin-dc-mysql": "^2.2.9",
+		"@axway/api-builder-plugin-fn-base64": "^2.0.0",
+		"@axway/api-builder-plugin-fn-dot": "^2.0.0",
+		"@axway/api-builder-plugin-fn-json": "^2.0.0",
+		"@axway/api-builder-plugin-fn-restclient": "^2.0.0",
+		"@axway/api-builder-plugin-fn-swagger": "^2.0.0",
+		"@axway/api-builder-runtime": "^4.11.18"
+	},
+	"devDependencies": {
+		"@axway/api-builder-admin": "^1.10.10",
+		"chai": "^4.1.2",
+		"mocha": "^5.2.0",
+		"nyc": "^14.0.0"
+	},
+	"nyc": {
+		"reporter": [
+			"lcov",
+			"text-summary"
+		],
+		"check-coverage": true,
+		"statements": 80,
+		"branches": 80,
+		"functions": 80,
+		"lines": 80
+	},
+	"scripts": {
+		"start": "node .",
+		"test": "nyc mocha  --colors ./test --recursive -R spec"
+	}
+}
