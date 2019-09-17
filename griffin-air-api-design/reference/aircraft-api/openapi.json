@@ -180,5 +180,6 @@
     {
       "name": "aircraft"
     }
-  ]
+  ],
+  "basePath": "/v1"
 }
