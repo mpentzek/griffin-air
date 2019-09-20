@@ -63,7 +63,8 @@
         "description": "This operation returns a list of aircrafts",
         "tags": [
           "aircraft"
-        ]
+        ],
+        "x-flow": "aircraftApi-get_aircraft"
       }
     },
     "/aircraft/{id}": {
