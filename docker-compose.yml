@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  db:
+    build: ./griffin-air-db
+    ports:
+       - "3307:3306"
+    environment:
+       MYSQL_ROOT_PASSWORD: axway
+  api-reference:
+    depends_on:
+       - db
+    build: ./griffin-air-api-reference
+    ports:
+       - "8081:8081"
+    environment:
+       MYSQL_HOST: db
+       MYSQL_PORT: 3306 
+       PORT: 8081
+       MYSQL_USER: root
+       MYSQL_PASSWORD: axway
