@@ -3,10 +3,10 @@ kind: API
 metadata:
   name: GriffinAirAPI 
   description: Griffin Air API
-  tags:
-    - api
-    - axway
-    - griffin
+  tags: 
+     - api
+     - axway
+     - griffin
   links:
     - url: https://github.com/mpentzek/griffin-air
       title: GitHub repo
