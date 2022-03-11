@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: Griffin Air API 
+  description: Griffin Air API
+  tags:
+    - API
+    - Axway
+    - Griffin
+  links:
+    - url: https://github.com/mpentzek/griffin-air
+      title: GitHub repo
+      icon: github
+    - url: https://github.com/mpentzek/griffin-air/blob/master/griffin-air-api-design/reference/aircraft-api/openapi.json
+      tile: API Spec
+      icon: code
