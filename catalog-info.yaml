@@ -4,9 +4,9 @@ metadata:
   name: GriffinAirAPI 
   description: Griffin Air API
   tags:
-    - API
-    - Axway
-    - Griffin
+    - api
+    - axway
+    - griffin
   links:
     - url: https://github.com/mpentzek/griffin-air
       title: GitHub repo
