@@ -14,3 +14,10 @@ metadata:
     - url: https://github.com/mpentzek/griffin-air/blob/master/griffin-air-api-design/reference/aircraft-api/openapi.json
       tile: API Spec
       icon: code
+spec:
+  type: openapi
+  lifecycle: production
+  owner: mpentzek@axway.com
+  definition:
+    $text: https://github.com/mpentzek/griffin-air/blob/master/griffin-air-api-design/reference/aircraft-api/openapi.json
+
