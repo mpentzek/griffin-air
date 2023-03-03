@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"@axway/api-builder-admin": "^1.10.10",
 		"chai": "^4.1.2",
-		"mocha": "^5.2.0",
+		"mocha": "^10.2.0",
 		"nyc": "^14.0.0"
 	},
 	"nyc": {
